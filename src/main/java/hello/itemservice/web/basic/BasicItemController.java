@@ -1,11 +1,9 @@
 package hello.itemservice.web.basic;
 
-import ch.qos.logback.core.model.ImplicitModel;
 import hello.itemservice.domain.item.Item;
 import hello.itemservice.domain.item.ItemRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -92,7 +90,7 @@ public class BasicItemController {
         return "basic/item";
     }
 
-    @PostMapping("/add")
+    //    @PostMapping("/add")
     public String addItemV5(Item item) {
         itemRepository.save(item);
         return "redirect:/basic/items/" + item.getId();
